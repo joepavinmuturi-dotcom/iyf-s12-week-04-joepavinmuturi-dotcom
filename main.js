@@ -237,3 +237,29 @@ console.log('Average:', classAverage);
 console.log(ranked.map((s) => s.name + ' ' + s.grade));
 console.log(anyoneBelowFifty, everyonePassed);   
 console.log(webStudentNames);                    
+
+
+
+const postsJson = `[
+  {"id": 1, "title": "Intro to JS", "published": true,  "likes": 42},
+  {"id": 2, "title": "Draft ideas", "published": false, "likes": 3},
+  {"id": 3, "title": "Arrays explained", "published": true, "likes": 87},
+  {"id": 4, "title": "Why JSON matters", "published": true, "likes": 55}
+]`;
+
+try {
+  const posts = JSON.parse(postsJson);                          
+  const publishedPosts = posts.filter((p) => p.published);     
+  const byLikes = [...publishedPosts].sort((x, y) => y.likes - x.likes);
+  const postLines = byLikes.map((p) => `${p.title} (${p.likes} likes)`);
+  console.log(postLines);
+  console.log(JSON.stringify(byLikes, null, 2));                
+} catch (error) {
+  console.log('Invalid JSON:', error.message);
+}
+
+try {
+  JSON.parse('{ title: missing quotes }');
+} catch (error) {
+  console.log('Caught bad JSON:', error.message);
+}
