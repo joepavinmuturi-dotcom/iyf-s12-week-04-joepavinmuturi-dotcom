@@ -162,3 +162,28 @@ if (calcForm) {
   });
 }
 
+const fruits = ['apple', 'banana', 'mango'];
+fruits.push('orange');      
+fruits.pop();              
+fruits.unshift('kiwi');     
+fruits.shift();             
+console.log(fruits.length, fruits[0], fruits.indexOf('mango'), fruits.includes('banana'));
+
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+numbers.forEach((n) => console.log('Number:', n));
+
+const squares = numbers.map((n) => n * n);                        // 1. map
+const evenNumbers = numbers.filter((n) => n % 2 === 0);           // 2. filter
+const firstOverFive = numbers.find((n) => n > 5);                 // 3. find
+const total = numbers.reduce((sum, n) => sum + n, 0);             // 4. reduce
+console.log(squares);        
+console.log(evenNumbers);    
+console.log(firstOverFive); 
+console.log(total);          
+
+const names = ['Amina', 'Brian', 'Joy', 'Cynthia'];
+console.log(names.map((n) => n.toUpperCase()));
+console.log(names.filter((n) => n.length > 4));
+
+
