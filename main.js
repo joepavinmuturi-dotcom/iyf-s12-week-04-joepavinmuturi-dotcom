@@ -37,4 +37,34 @@ console.log(`I am about ${days} days (${hours} hours) old.`);
 console.log('I turn 100 in', birthDate.getFullYear() + 100);
 
 
+function calculateArea(width, height) {
+  return width * height;
+}
 
+const celsiusToFahrenheit = function (celsius) {
+  return (celsius * 9) / 5 + 32;
+};
+
+const isEven = (n) => n % 2 === 0;
+
+function getInitials(fullName) {
+  return fullName
+    .split(' ')
+    .filter(Boolean)
+    .map((word) => word[0].toUpperCase())
+    .join('');
+}
+
+function reverseString(str) {
+  return str.split('').reverse().join('');
+}
+
+const calculateTip = (bill, tipPercent = 15) => (bill * tipPercent) / 100;
+
+console.log(calculateArea(5, 4));             
+console.log(celsiusToFahrenheit(100));         
+console.log(isEven(8), isEven(7));             
+console.log(getInitials('Amina Wanjiku'));     
+console.log(reverseString('hello'));           
+console.log(calculateTip(2000));               
+console.log(calculateTip(2000, 10));           
