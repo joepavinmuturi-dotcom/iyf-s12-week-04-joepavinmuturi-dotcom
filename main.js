@@ -338,4 +338,56 @@ console.log(gradeTracker.getTopStudent().name);
 console.log(gradeTracker.getStrugglingStudents());
 console.log(gradeTracker.getLetterGrade(85));
 console.log(gradeTracker.generateReportCard('Amina'));
-console.log(gradeTracker.generateReportCard('Zed'));     
+console.log(gradeTracker.generateReportCard('Zed'));  
+
+
+
+// ===== Daily challenges =====
+// Day 1: FizzBuzz as a reusable function
+function fizzBuzzUpTo(limit) {
+  const results = [];
+  for (let i = 1; i <= limit; i++) {
+    if (i % 15 === 0) results.push('FizzBuzz');
+    else if (i % 3 === 0) results.push('Fizz');
+    else if (i % 5 === 0) results.push('Buzz');
+    else results.push(i);
+  }
+  return results;
+}
+console.log(fizzBuzzUpTo(15));
+
+// Day 2: reverse a string with a loop (no .reverse())
+function reverseWord(word) {
+  let reversed = '';
+  for (let i = word.length - 1; i >= 0; i--) {
+    reversed += word[i];
+  }
+  return reversed;
+}
+console.log(reverseWord('JavaScript')); 
+
+// Day 3: largest number without Math.max()
+function findLargest(list) {
+  if (list.length === 0) return null;
+  let largest = list[0];
+  for (const n of list) {
+    if (n > largest) largest = n;
+  }
+  return largest;
+}
+console.log(findLargest([3, 17, 9, 42, 8])); 
+
+// Day 4: remove duplicates
+function removeDuplicates(list) {
+  return list.filter((item, index) => list.indexOf(item) === index);
+}
+console.log(removeDuplicates([1, 2, 2, 3, 3, 3, 4])); 
+
+// Day 5: palindrome checker (ignores case, spaces and punctuation)
+function isPalindrome(sentence) {
+  const cleaned = sentence.toLowerCase().replace(/[^a-z0-9]/g, '');
+  return cleaned === cleaned.split('').reverse().join('');
+}
+console.log(isPalindrome('Racecar'));                          
+console.log(isPalindrome('A man, a plan, a canal: Panama'));   
+console.log(isPalindrome('Hello'));                            
