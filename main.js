@@ -68,3 +68,54 @@ console.log(getInitials('Amina Wanjiku'));
 console.log(reverseString('hello'));           
 console.log(calculateTip(2000));               
 console.log(calculateTip(2000, 10));           
+
+
+function gradeLetter(score) {
+  if (score >= 80) return 'A';
+  else if (score >= 70) return 'B';
+  else if (score >= 60) return 'C';
+  else return 'F';
+}
+console.log(gradeLetter(85), gradeLetter(72), gradeLetter(40)); // A B F
+
+function dayType(dayNumber) {
+  switch (dayNumber) {
+    case 0:
+    case 6:
+      return 'Weekend';
+    case 1: case 2: case 3: case 4: case 5:
+      return 'Weekday';
+    default:
+      return 'Not a valid day';
+  }
+}
+console.log(dayType(0), dayType(3), dayType(9)); 
+
+let line = '';
+for (let i = 1; i <= 100; i++) {
+  line += i + ' ';
+}
+console.log(line.trim());
+
+let evens = '';
+for (let i = 2; i <= 50; i += 2) {
+  evens += i + ' ';
+}
+console.log(evens.trim());
+
+for (let i = 1; i <= 100; i++) {
+  if (i % 15 === 0) console.log('FizzBuzz');
+  else if (i % 3 === 0) console.log('Fizz');
+  else if (i % 5 === 0) console.log('Buzz');
+  else console.log(i);
+}
+
+for (let row = 1; row <= 5; row++) {
+  console.log('*'.repeat(row));
+}
+
+let count = 5;
+while (count > 0) {
+  console.log(count);
+  count--;
+}
