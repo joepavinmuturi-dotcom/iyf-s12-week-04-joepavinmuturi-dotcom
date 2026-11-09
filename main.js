@@ -187,3 +187,27 @@ console.log(names.map((n) => n.toUpperCase()));
 console.log(names.filter((n) => n.length > 4));
 
 
+const learner = {
+  name: 'Amina',
+  age: 20,
+  course: 'Software Development',
+  skills: ['HTML', 'CSS', 'JavaScript'],
+  greet() {
+    return `Hi, I am ${this.name} and I study ${this.course}.`;
+  },
+};
+
+console.log(learner.name, learner['age']);
+learner.age = 21;
+learner.city = 'Nairobi';
+delete learner.city;
+console.log('skills' in learner);  
+console.log(learner.greet());
+
+console.log(Object.keys(learner));
+console.log(Object.values(learner));
+console.log(Object.entries(learner));
+for (const [key, value] of Object.entries(learner)) {
+  console.log(key + ': ' + value);
+}
+
