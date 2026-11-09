@@ -211,3 +211,29 @@ for (const [key, value] of Object.entries(learner)) {
   console.log(key + ': ' + value);
 }
 
+
+
+const studentList = [
+  { id: 1, name: 'Amina',   grade: 85, course: 'Web',  passed: true },
+  { id: 2, name: 'Brian',   grade: 62, course: 'Data', passed: true },
+  { id: 3, name: 'Cynthia', grade: 45, course: 'Web',  passed: false },
+  { id: 4, name: 'Daniel',  grade: 91, course: 'Data', passed: true },
+  { id: 5, name: 'Esther',  grade: 58, course: 'Web',  passed: false },
+];
+
+const studentNames = studentList.map((s) => s.name);
+const passingList = studentList.filter((s) => s.grade >= 60);
+const studentFour = studentList.find((s) => s.id === 4);
+const classAverage = studentList.reduce((sum, s) => sum + s.grade, 0) / studentList.length;
+const ranked = [...studentList].sort((x, y) => y.grade - x.grade);
+const anyoneBelowFifty = studentList.some((s) => s.grade < 50);
+const everyonePassed = studentList.every((s) => s.passed);
+const webStudentNames = studentList.filter((s) => s.course === 'Web').map((s) => s.name);
+
+console.log(studentNames);
+console.log(passingList);
+console.log(studentFour);
+console.log('Average:', classAverage);
+console.log(ranked.map((s) => s.name + ' ' + s.grade));
+console.log(anyoneBelowFifty, everyonePassed);   
+console.log(webStudentNames);                    
